@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "4a0ac49a-9268-4f5f-906b-6890d4040a61",
+		"name": "BrainAgriculture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27889891",
+		"_collection_link": "https://www.postman.com/material-explorer-9392779/workspace/receiteme/collection/27889891-4a0ac49a-9268-4f5f-906b-6890d4040a61?action=share&source=collection_link&creator=27889891"
+	},
+	"item": [
+		{
+			"name": "CadastrarProdutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf_ou_cnpj\": \"272.076.190-73\",\r\n    \"nome_produtor\": \"Maria Ferreira\",\r\n    \"nome_fazenda\": \"Fazenda Amora\",\r\n    \"area_total\": 2431.7,\r\n    \"area_agricultavel\": 1214.4,\r\n    \"area_vegetacao\": 546,\r\n    \"culturas\": [\r\n        \"Algodão\",\r\n        \"Milho\",\r\n        \"Café\"\r\n    ],\r\n    \"cidade\": \"Cuiabá\",\r\n    \"estado\": \"Mato Grosso\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/cadastrar",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditarProdutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf_ou_cnpj\": \"272.076.190-73\",\r\n    \"nome_produtor\": \"Maria Ferreira\",\r\n    \"nome_fazenda\": \"Fazenda Amora\",\r\n    \"area_total\": 2431.7,\r\n    \"area_agricultavel\": 1214.4,\r\n    \"area_vegetacao\": 546,\r\n    \"culturas\": [\r\n        \"Algodão\",\r\n        \"Milho\",\r\n        \"Café\",\r\n        \"Soja\"          //Soja adicionada\r\n    ],\r\n    \"cidade\": \"Cuiabá\",\r\n    \"estado\": \"Mato Grosso\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/editar",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditarAtributoProdutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf_ou_cnpj\": \"791.882.530-66\",\r\n    \"novo_valor\": \"123.123.123-12\"     //Verifica que o CPF é inválido.\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/editar/cpf_ou_cnpj",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"editar",
+						"cpf_ou_cnpj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditarAtributoFazenda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cpf_ou_cnpj\": \"694.674.730-54\",\r\n    \"novo_valor\": 924.3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.0.11:3300/fazendas/editar/area_agricultavel",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"fazendas",
+						"editar",
+						"area_agricultavel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ExcluirProdutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/excluir/272.076.190-73",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"excluir",
+						"272.076.190-73"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelecionarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/todos",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelecionarProdutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/produtores/selecionar/79188253066",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"produtores",
+						"selecionar",
+						"79188253066"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TotalFazendas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/dashboard/total_fazendas",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"dashboard",
+						"total_fazendas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AreaTotalFazendas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/dashboard/area_total_fazendas",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"dashboard",
+						"area_total_fazendas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TotalPorEstado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/dashboard/total_por_estado",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"dashboard",
+						"total_por_estado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TotalPorCultura",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/dashboard/total_por_cultura",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"dashboard",
+						"total_por_cultura"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UsoDeSolo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.0.11:3300/dashboard/uso_de_solo",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"11"
+					],
+					"port": "3300",
+					"path": [
+						"dashboard",
+						"uso_de_solo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
